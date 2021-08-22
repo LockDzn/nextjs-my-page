@@ -1,58 +1,53 @@
-import { Header, Main, SectionHome, SectionPortfolio } from '../styles/Home'
+import { Container, Footer } from '../styles/Home'
 
 import Card from '../components/Card'
 
-import portifolioData from '../portifolio.json'
+import portfolioData from '../portfolio.json'
 
 export default function Home({ user }) {
   return (
-    <>
-      <Header>
-        <ul className="itens">
-          <div className="title">
-            <li>
-              <h1>eu.ryansouza@gmail.com</h1>
-            </li>
-          </div>
-          <div className="resto">
-            <li>
-              <a href="index.html">Home</a>
-            </li>
-            <li>
-              <a
-                href={`https://twitter.com/${user.twitter_username}`}
-                target="_blank"
-              >
-                Contato
-              </a>
-            </li>
-            <li>
-              <a href="">Page</a>
-            </li>
-          </div>
-        </ul>
-      </Header>
-      <Main>
-        <SectionHome>
-          <div className="container">
-            <img src={user.avatar_url} alt="Foto de Ryan" width="200" />
-            <div className="texts">
-              <h1>
-                Eu sou o <span className="title-blue">{user.name}</span>
-              </h1>
-              <p>{user.bio}</p>
-            </div>
-          </div>
-        </SectionHome>
-        <SectionPortfolio>
-          <div className="cards">
-            {portifolioData.map((portifolio, index) => (
-              <Card informations={portifolio} key={index} />
-            ))}
-          </div>
-        </SectionPortfolio>
-      </Main>
-    </>
+    <Container>
+      <section className="profile">
+        <img src={user.avatar_url} alt="My logo" width="200" />
+        <div className="informations">
+          <h1 className="name">Ryan Souza</h1>
+          <h2 className="nickname blue-text-background">LockDzn</h2>
+        </div>
+      </section>
+      <section className="sociais">
+        <a href="https://github.com/lockdzn" target="_blank" className="link">
+          <img src="/icons/github.svg" alt="Github" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/ryanssouza/"
+          target="_blank"
+          className="link"
+        >
+          <img src="/icons/linkedin.svg" alt="Linkedin" />
+        </a>
+        <a href="https://twitter.com/nuloki_" target="_blank" className="link">
+          <img src="/icons/twitter.svg" alt="Twitter" />
+        </a>
+        <a href="https://twitch.tv/nuloki_" target="_blank" className="link">
+          <img src="/icons/twitch.svg" alt="Twitch" />
+        </a>
+      </section>
+      <section className="projects">
+        <h3 className="blue-text-background">Projetos</h3>
+        <div className="list">
+          {portfolioData.map((portfolio, index) => (
+            <Card informations={portfolio} key={index} />
+          ))}
+        </div>
+      </section>
+      <Footer>
+        <div className="credits">
+          <p>
+            Made by <strong className="blue-text-background">Ryan Souza</strong>
+          </p>
+        </div>
+      </Footer>
+    </Container>
   )
 }
 
