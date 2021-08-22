@@ -4,7 +4,7 @@
     "description": "Player de audio feito com ReactJS, utilizando a API do Flow Podcast.",
     "demo": "https://flowpodcast.vercel.app/",
     "source": "https://github.com/LockDzn/flowpodcast-player",
-    "image": "/img/flowpodcast-player.png",
+    "image": "/img/portfolio/flowpodcast-player.png",
     "tools": ["ReactJS", "NextJS", "Styled-Components"]
   },
   {
@@ -12,7 +12,7 @@
     "description": "Utilizando a técnica de pomodoro, a técnica consiste na utilização de um cronômetro para dividir o trabalho em períodos de 25 minutos, separados por breves exercícios.",
     "demo": "http://moveit-lockdzn.vercel.app/",
     "source": "https://github.com/LockDzn/moveit",
-    "image": "/img/moveit.png",
+    "image": "/img/portfolio/moveit.png",
     "tools": ["ReactJS", "NextJS", "Styled-Components"]
   },
   {
@@ -20,7 +20,7 @@
     "description": "Utilizando a API do github, você pode procurar por repositorios e ver as informações dele.",
     "demo": "https://github-explorer-lockdzn.vercel.app/",
     "source": "https://github.com/LockDzn/github-explorer",
-    "image": "/img/github-explorer.png",
+    "image": "/img/portfolio/github-explorer.png",
     "tools": ["ReactJS", "Styled-Components"]
   }
 ]

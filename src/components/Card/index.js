@@ -2,9 +2,9 @@ import { Container } from './styles'
 export default function Card({ informations }) {
   return (
     <Container>
-      <img src={informations.image} />
-      <strong>{informations.title}</strong>
-      <p>{informations.description}</p>
+      <strong className="title">{informations.title}</strong>
+      <img className="image" src={informations.image} />
+      <p className="description">{informations.description}</p>
       <div className="tools">
         Ferramentas:{' '}
         {informations.tools.map((tool, index) => (
