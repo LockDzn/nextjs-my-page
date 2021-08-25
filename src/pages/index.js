@@ -1,36 +1,56 @@
 import { Container, Footer } from '../styles/Home'
 
 import Card from '../components/Card'
+import ArrowDown from '../components/ArrowDown'
 
 import portfolioData from '../portfolio.json'
 
 export default function Home({ user }) {
   return (
     <Container>
-      <section className="profile">
-        <img src={user.avatar_url} alt="My logo" width="200" />
-        <div className="informations">
-          <h1 className="name">Ryan Souza</h1>
-          <h2 className="nickname blue-text-background">LockDzn</h2>
+      <section className="me">
+        <div className="profile">
+          <img
+            className="icon"
+            src={user.avatar_url}
+            alt="My logo"
+            width="200"
+          />
+          <div className="informations">
+            <h1 className="name">Ryan Souza</h1>
+            <h2 className="nickname blue-text-background">LockDzn</h2>
+          </div>
         </div>
-      </section>
-      <section className="sociais">
-        <a href="https://github.com/lockdzn" target="_blank" className="link">
-          <img src="/icons/github.svg" alt="Github" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/ryanssouza/"
-          target="_blank"
-          className="link"
-        >
-          <img src="/icons/linkedin.svg" alt="Linkedin" />
-        </a>
-        <a href="https://twitter.com/nuloki_" target="_blank" className="link">
-          <img src="/icons/twitter.svg" alt="Twitter" />
-        </a>
-        <a href="https://twitch.tv/nuloki_" target="_blank" className="link">
-          <img src="/icons/twitch.svg" alt="Twitch" />
-        </a>
+        <div className="description">
+          <p>Hi there 👋</p>
+          <p>
+            My name is Ryan Souza, React junior developer. Always looking for a
+            way to constantly learn and evolve!
+          </p>
+        </div>
+        <div className="sociais">
+          <a href="https://github.com/lockdzn" target="_blank" className="link">
+            <img src="/icons/github.svg" alt="Github" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ryanssouza/"
+            target="_blank"
+            className="link"
+          >
+            <img src="/icons/linkedin.svg" alt="Linkedin" />
+          </a>
+          <a
+            href="https://twitter.com/nuloki_"
+            target="_blank"
+            className="link"
+          >
+            <img src="/icons/twitter.svg" alt="Twitter" />
+          </a>
+          <a href="https://twitch.tv/nuloki_" target="_blank" className="link">
+            <img src="/icons/twitch.svg" alt="Twitch" />
+          </a>
+        </div>
+        <ArrowDown />
       </section>
       <section className="projects">
         <h3 className="blue-text-background">Projetos</h3>

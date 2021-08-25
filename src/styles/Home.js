@@ -3,53 +3,67 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10rem;
 
   section {
     padding: 0 5rem;
+    width: 100%;
+    min-height: 100vh;
   }
 
-  .profile {
+  .me {
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4rem;
 
-    margin-top: 10rem;
+    .profile {
+      display: flex;
+      align-items: center;
 
-    img {
-      width: 128px;
-      height: 128px;
+      gap: 1rem;
 
-      border-radius: 50%;
+      .icon {
+        width: 128px;
+        height: 128px;
+
+        border-radius: 50%;
+      }
+
+      .informations {
+        .name {
+          font-size: 32px;
+        }
+
+        .nickname {
+          opacity: 0.8;
+          font-size: 20px;
+          font-weight: 200;
+        }
+      }
     }
 
-    .informations {
-      .name {
-        font-size: 32px;
-      }
-
-      .nickname {
-        opacity: 0.8;
-        font-size: 20px;
-        font-weight: 200;
+    .description {
+      p {
+        font-size: 18px;
+        word-spacing: -3px;
       }
     }
-  }
 
-  .sociais {
-    display: flex;
-    gap: 1rem;
+    .sociais {
+      display: flex;
+      gap: 1rem;
 
-    .link {
-      transition: all 300ms ease-in;
+      .link {
+        transition: all 300ms ease-in;
 
-      img {
-        width: 28px;
-        height: 28px;
-      }
+        img {
+          width: 28px;
+          height: 28px;
+        }
 
-      &:hover {
-        opacity: 0.5;
+        &:hover {
+          opacity: 0.5;
+        }
       }
     }
   }
@@ -83,34 +97,38 @@ export const Container = styled.div`
   }
 
   @media only screen and (max-width: 700px) {
-    gap: 4rem;
-
-    section {
-      margin-top: 5rem;
-    }
-
-    .profile {
+    .me {
+      gap: 2rem;
       padding: 0 1rem;
 
-      img {
-        width: 78px;
-        height: 78px;
-      }
-
-      .informations {
-        .name {
-          font-size: 28px;
+      .profile {
+        .icon {
+          width: 78px;
+          height: 78px;
         }
 
-        .nickname {
-          font-size: 18px;
+        .informations {
+          .name {
+            font-size: 28px;
+          }
+
+          .nickname {
+            font-size: 18px;
+          }
         }
       }
-    }
 
-    .sociais {
-      justify-content: center;
-      align-items: center;
+      .description {
+        p {
+          font-size: 16px;
+          word-spacing: -3px;
+        }
+      }
+
+      .sociais {
+        justify-content: center;
+        align-items: center;
+      }
     }
 
     .projects {
