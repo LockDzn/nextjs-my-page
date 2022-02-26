@@ -1,0 +1,9 @@
+.container {
+  color: var(--blue);
+  cursor: pointer;
+  transition: color 0.4s ease-out;
+}
+
+.container:hover {
+  color: var(--pink);
+}

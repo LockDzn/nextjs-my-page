@@ -1,0 +1,28 @@
+.container {
+}
+
+.main {
+}
+
+.sec {
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+      circle 800px at 700px 200px,
+      #e93d8220,
+      #16161800
+    ),
+    radial-gradient(
+      circle 600px at calc(100% - 300px) 300px,
+      #e93d8220,
+      #16161800
+    ),
+    radial-gradient(circle 800px at right center, #00cdff20, #16161800),
+    radial-gradient(circle 800px at right bottom, #00cdff20, #16161800),
+    radial-gradient(
+      circle 800px at calc(50% - 600px) calc(100% - 100px),
+      #e93d8220,
+      #e93d8220,
+      #16161800
+    );
+}
