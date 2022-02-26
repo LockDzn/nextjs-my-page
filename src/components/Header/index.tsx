@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -6,8 +5,6 @@ import { useRouter } from 'next/router'
 import styles from './styles.module.css'
 
 export function Header() {
-  const [selectedTab, setSelectedTab] = useState(0)
-
   const router = useRouter()
 
   const tabs = [
@@ -25,7 +22,7 @@ export function Header() {
     <header className={`${styles.container} ${styles.blur}`}>
       <ul className={styles.list}>
         {tabs.map((item, itemId) => (
-          <Link key={itemId} href={item.path}>
+          <Link key={itemId} href={item.path} passHref>
             <li
               className={`${styles.link} ${
                 item.path === router.pathname ? styles.selected : ''

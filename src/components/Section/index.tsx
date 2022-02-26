@@ -15,7 +15,7 @@ export function Section({ children }: SectionProps) {
 
   useEffect(() => {
     registerSection(sectionRef)
-  }, [])
+  }, [registerSection])
 
   return (
     <section ref={sectionRef} className={styles.container}>
