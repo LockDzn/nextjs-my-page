@@ -1,13 +1,14 @@
-import styles from './styles.module.css'
+import { Container, Text } from './styles'
 
 interface GradientTextProps extends React.HTMLProps<HTMLHeadingElement> {
   text: string
+  size?: number
 }
 
-export function GradientText({ text, ...rest }: GradientTextProps) {
+export function GradientText({ text, size = 28 }: GradientTextProps) {
   return (
-    <div className={styles.container}>
-      <h2 {...rest}>{text}</h2>
-    </div>
+    <Container>
+      <Text css={{ fontSize: size }}>{text}</Text>
+    </Container>
   )
 }

@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@stitches/react": "^1.2.7",
     "framer-motion": "^6.2.7",
     "gray-matter": "^4.0.3",
     "moment": "^2.29.1",
@@ -18,7 +19,8 @@
     "react-intersection-observer": "^8.33.1",
     "remark": "^14.0.2",
     "remark-highlight.js": "^7.0.1",
-    "remark-html": "^15.0.1"
+    "remark-html": "^15.0.1",
+    "sass": "^1.49.9"
   },
   "devDependencies": {
     "@types/node": "17.0.19",

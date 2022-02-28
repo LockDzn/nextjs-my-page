@@ -1,23 +1,34 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { SectionWrapper } from '../components/SectionWrapper'
+import { InitialSection } from '../sections/Initial'
+import { WorkSection } from '../sections/Work'
 
-import styles from '../styles/Home.module.css'
+import { Container } from '../styles/homePage'
 
-const Home: NextPage = () => {
+import works from '../works.json'
+
+function Home() {
   return (
-    <div className={styles.container}>
+    <Container>
       <Head>
         <title>Ryan Souza&apos;s Website</title>
         <meta name="description" content="Ryan Souza's Website" />
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <main className={styles.main}>
-        <SectionWrapper />
+      <main className="main">
+        <div className="sections">
+          <InitialSection />
+          {works.map((work, index) => (
+            <WorkSection
+              key={index}
+              reverse={index % 2 == 0 ? false : true}
+              workData={work}
+            />
+          ))}
+        </div>
       </main>
-    </div>
+    </Container>
   )
 }
 

@@ -1,5 +1,4 @@
-import { createRef, LegacyRef, RefObject, useContext, useEffect } from 'react'
-import { motion, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import {
   FaTwitter,
   FaGithub,
@@ -8,58 +7,71 @@ import {
   FaEnvelope,
 } from 'react-icons/fa'
 
-import { useWrapperScroll } from '../../hooks/useWrapperScroll'
-
 import { Section } from '../../components/Section'
 import { GradientText } from '../../components/GradientText'
-import { IconLink } from '../../components/IconLink'
-
-import styles from './styles.module.css'
-import { SectionsContext } from '../../contexts/SectionsContext'
 import { OnViewAnimation } from '../../animations/OnViewAnimation'
+
+import {
+  Container,
+  LeftSide,
+  Header,
+  Social,
+  IconLink,
+  Description,
+  Name,
+  RightSide,
+  Blackrole,
+} from './styles'
 
 export function InitialSection() {
   return (
     <Section>
-      <div className={styles.container}>
-        <div className={styles.left}>
-          <OnViewAnimation aimateDelay={0.1}>
-            <div className={styles.header}>
-              <motion.h1
-                className={styles.name}
-                whileHover={{ letterSpacing: '10px' }}
-              >
-                Ryan Souza
-              </motion.h1>
-              <GradientText
-                className={styles.workAreas}
-                text="Web developer & UX/UI Designer"
-              />
-            </div>
-            <p className={styles.description}>
+      <Container>
+        <LeftSide>
+          <OnViewAnimation aimateDelay={0.2}>
+            <Header>
+              <Name whileHover={{ letterSpacing: '10px' }}>Ryan Souza</Name>
+              <GradientText size={20} text="Web developer & UX/UI Designer" />
+            </Header>
+            <Description>
               Developer specialized in creating interfaces so that users have
               the best experience.
-            </p>
-            <div className={styles.social}>
-              <IconLink link="https://twitter.com/nuLoki_">
+            </Description>
+            <Social>
+              <IconLink
+                whileHover={{ scale: 1.5, rotate: 10 }}
+                href="https://twitter.com/nuLoki_"
+              >
                 <FaTwitter size={28} />
               </IconLink>
-              <IconLink link="https://github.com/LockDzn">
+              <IconLink
+                whileHover={{ scale: 1.5, rotate: 10 }}
+                href="https://github.com/LockDzn"
+              >
                 <FaGithub size={28} />
               </IconLink>
-              <IconLink link="https://www.linkedin.com/in/ryanssouza/">
+              <IconLink
+                whileHover={{ scale: 1.5, rotate: 10 }}
+                href="https://www.linkedin.com/in/ryanssouza/"
+              >
                 <FaLinkedin size={28} />
               </IconLink>
-              <IconLink link="https://www.twitch.tv/nuloki_">
+              <IconLink
+                whileHover={{ scale: 1.5, rotate: 10 }}
+                href="https://www.twitch.tv/nuloki_"
+              >
                 <FaTwitch size={28} />
               </IconLink>
-              <IconLink link="mailto:eu.ryansouza@gmail.com">
+              <IconLink
+                whileHover={{ scale: 1.5, rotate: 10 }}
+                href="mailto:eu.ryansouza@gmail.com"
+              >
                 <FaEnvelope size={28} />
               </IconLink>
-            </div>
+            </Social>
           </OnViewAnimation>
-        </div>
-        <div className={styles.right}>
+        </LeftSide>
+        <RightSide>
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -69,8 +81,7 @@ export function InitialSection() {
               damping: 20,
             }}
           >
-            <motion.div
-              className={styles.blackRole}
+            <Blackrole
               initial={{ rotate: 0 }}
               animate={{ rotate: -360 }}
               transition={{
@@ -79,8 +90,8 @@ export function InitialSection() {
               }}
             />
           </motion.div>
-        </div>
-      </div>
+        </RightSide>
+      </Container>
     </Section>
   )
 }

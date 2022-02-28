@@ -1,17 +1,17 @@
 import React from 'react'
-import { motion, useAnimation } from 'framer-motion'
+import { motion, MotionStyle, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
 interface OnViewAnimationProps {
   aimateDelay?: number
   children?: React.ReactNode
-  className?: string
+  style?: MotionStyle
 }
 
 export function OnViewAnimation({
   children,
+  style,
   aimateDelay = 0.8,
-  className,
 }: OnViewAnimationProps) {
   const { inView, ref } = useInView()
   const animationControl = useAnimation()
@@ -34,7 +34,7 @@ export function OnViewAnimation({
       }}
       animate={animationControl}
       ref={ref}
-      className={className}
+      style={style}
     >
       {children}
     </motion.div>

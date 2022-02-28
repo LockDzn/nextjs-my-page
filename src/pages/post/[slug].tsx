@@ -6,7 +6,14 @@ import Moment from 'moment'
 import markdownToHtml from '../../lib/markdownToHtml'
 import { getPostBySlug, getAllPosts, PostProps } from '../../lib/post'
 
-import styles from '../../styles/Post.module.css'
+import {
+  Container,
+  Content,
+  Footer,
+  Article,
+  Header,
+  Title,
+} from '../../styles/postPage'
 
 type Props = {
   post: PostProps
@@ -22,38 +29,35 @@ const Post = ({ post, morePosts, preview }: Props) => {
   }
 
   return (
-    <div className={styles.container}>
+    <Container>
       <div>
         {router.isFallback ? (
           <h1>Loading…</h1>
         ) : (
           <>
-            <article className={styles.article}>
+            <Article>
               <Head>
                 <title>{post.title} — Ryan Souza</title>
                 <meta name="description" content={post.description} />
                 <link rel="icon" href="/favicon.png" />
               </Head>
 
-              <div className={styles.header}>
-                <h1 className={styles.title}>{post.title}</h1>
-              </div>
-              <div
-                className={styles.content}
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
+              <Header>
+                <Title>{post.title}</Title>
+              </Header>
+              <Content dangerouslySetInnerHTML={{ __html: post.content }} />
 
-              <div className={styles.footer}>
-                <span className={styles.date}>
+              <Footer>
+                <span>
                   {Moment(post.date).format('L')} (
                   {Moment(post.date).startOf('day').fromNow()})
                 </span>
-              </div>
-            </article>
+              </Footer>
+            </Article>
           </>
         )}
       </div>
-    </div>
+    </Container>
   )
 }
 
