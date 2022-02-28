@@ -1,8 +1,7 @@
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import styles from './styles.module.css'
+import { Container, Item, List, Underline } from './styles'
 
 export function Header() {
   const router = useRouter()
@@ -19,23 +18,21 @@ export function Header() {
   ]
 
   return (
-    <header className={`${styles.container} ${styles.blur}`}>
-      <ul className={styles.list}>
+    <Container>
+      <List>
         {tabs.map((item, itemId) => (
           <Link key={itemId} href={item.path} passHref>
-            <li
-              className={`${styles.link} ${
-                item.path === router.pathname ? styles.selected : ''
-              }`}
+            <Item
+              className={`${item.path === router.pathname ? 'selected' : ''}`}
             >
               {item.name}
               {item.path === router.pathname ? (
-                <motion.div className={styles.underline} layoutId="underline" />
+                <Underline layoutId="underline" />
               ) : null}
-            </li>
+            </Item>
           </Link>
         ))}
-      </ul>
-    </header>
+      </List>
+    </Container>
   )
 }

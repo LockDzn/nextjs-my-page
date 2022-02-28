@@ -2,7 +2,7 @@ import { NextPageContext } from 'next'
 
 import { GradientText } from '../components/GradientText'
 
-import styles from '../styles/Error.module.css'
+import { Container } from '../styles/errorPage'
 
 interface ErrorProps {
   statusCode: number
@@ -10,10 +10,10 @@ interface ErrorProps {
 
 function Error({ statusCode }: ErrorProps) {
   return (
-    <div className={styles.container}>
-      <GradientText text={`${statusCode}`} />
+    <Container>
+      <GradientText size={64} text={`${statusCode}`} />
       <h2>This page could not be found.</h2>
-    </div>
+    </Container>
   )
 }
 

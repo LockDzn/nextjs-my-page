@@ -22,7 +22,7 @@ Below my information I put my work, for now that was all, I intend to add more t
 
 > Text that is a quote
 
-- is a list
+- is a `list`
 - [Twitter](https://twitter.com/nuloki_)
 - [GitHub](https://github.com/lockdzn)
 
