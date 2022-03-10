@@ -15,6 +15,7 @@ import {
   Type,
 } from './styles'
 import { FaArrowRight, FaGithub } from 'react-icons/fa'
+import { Button } from '../../components/Button'
 
 interface WorkSectionProps {
   reverse?: boolean
@@ -23,8 +24,10 @@ interface WorkSectionProps {
     description: string
     imageURL: string
     type: string
-    demoURL: string
-    githubURL: string
+    links: {
+      text: string
+      url: string
+    }[]
   }
 }
 
@@ -48,22 +51,9 @@ export function WorkSection({ reverse = false, workData }: WorkSectionProps) {
               <Title>{workData.title}</Title>
               <Description>{workData.description}</Description>
               <Links>
-                {workData.githubURL.trim() && (
-                  <Link href={workData.githubURL} target="_blank">
-                    On Github
-                    <FaGithub size={18} />
-                  </Link>
-                )}
-                {workData.demoURL.trim() && (
-                  <Link
-                    href={workData.demoURL}
-                    target="_blank"
-                    className="outline"
-                  >
-                    Demo
-                    <FaArrowRight size={18} />
-                  </Link>
-                )}
+                {workData.links.map((link, index) => (
+                  <Button key={index} link={link.url}>{link.text}</Button>
+                ))}
               </Links>
             </OnViewAnimation>
           </Information>

@@ -4,7 +4,27 @@
     "description": "Show which artists would be at the user's festival, based on the most listened to artists on Spotify. I used React, Next.js and Spotify API.",
     "imageURL": "./assets/festital-spotify.png",
     "type": "Open Source Project",
-    "githubURL": "https://github.com/LockDzn/meu-festival-spotify",
-    "demoURL": "https://meu-festival.vercel.app/"
+    "links": [
+      {
+        "text": "On Github",
+        "url": "https://github.com/LockDzn/meu-festival-spotify"
+      },
+      {
+        "text": "Demo",
+        "url": "https://meu-festival.vercel.app/"
+      }
+    ]
+  },
+  {
+    "title": "EcoBank",
+    "description": "Bank app design focused on customer spending control.",
+    "imageURL": "./assets/ecobank.png",
+    "type": "UI/UX Design",
+    "links": [
+      {
+        "text": "View on Behance",
+        "url": "https://www.behance.net/gallery/139002863/EcoBank-App"
+      }
+    ]
   }
 ]
