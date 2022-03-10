@@ -1,6 +1,7 @@
 import { OnViewAnimation } from '../../animations/OnViewAnimation'
 
 import { Section } from '../../components/Section'
+import { Button } from '../../components/Button'
 
 import {
   Container,
@@ -8,14 +9,12 @@ import {
   Image,
   ImageArea,
   Information,
-  Link,
   Links,
   Split,
   Title,
   Type,
 } from './styles'
-import { FaArrowRight, FaGithub } from 'react-icons/fa'
-import { Button } from '../../components/Button'
+
 
 interface WorkSectionProps {
   reverse?: boolean
